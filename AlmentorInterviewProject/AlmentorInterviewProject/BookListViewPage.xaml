@@ -1,0 +1,42 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="AlmentorInterviewProject.BookListViewPage">
+    <StackLayout>
+        <Label Text="Available Books" VerticalOptions="Center" HorizontalOptions="Center" FontSize="Title"/>
+
+        <ListView x:Name="MyListView"
+                    ItemsSource="{Binding Items}"
+                    ItemTapped="Handle_ItemTapped"
+                    CachingStrategy="RecycleElement">
+            <!--Built in Cells-->
+            <!--<ListView.ItemTemplate>
+                <DataTemplate>
+                    <TextCell Text="{Binding .}" />
+                </DataTemplate>
+            </ListView.ItemTemplate>-->
+    
+            <!--Custom View Cells-->
+    
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                <ViewCell>
+                <StackLayout>
+                    <!--<Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="*"/>
+                            <ColumnDefinition Width="*"/>
+                        </Grid.ColumnDefinitions>
+                        --><!-- Place new controls here --><!--
+                        <Label Grid.Column="0" Text="{Binding Name}" HorizontalOptions="Center" VerticalOptions="Center"/>
+                        <Label Grid.Column="1" Text="{Binding Price}" HorizontalOptions="Center" VerticalOptions="Center"/>
+                    </Grid>-->
+                                <Label Text="{Binding Name}" VerticalOptions="StartAndExpand" HorizontalOptions="StartAndExpand"/>
+                </StackLayout>
+                </ViewCell>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+
+        </ListView>
+    </StackLayout>
+</ContentPage>
